@@ -39,7 +39,16 @@ export default defineManifest({
       matches: [],
     },
   ],
-  permissions: ['sidePanel', 'storage'],
+  // Ideally this should be the localhost:port of the vite dev server.
+  // But this extension is just for demonstration purposes.
+  host_permissions: ['<all_urls>'],
+  permissions: [
+    'sidePanel',
+    'storage',
+    'declarativeNetRequest',
+    'declarativeNetRequestFeedback',
+    'webRequest',
+  ],
   chrome_url_overrides: {
     newtab: 'newtab.html',
   },
